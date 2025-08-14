@@ -1,84 +1,292 @@
-@font-face {
-    font-family: 'Cinzel-Extabold'; 
-    src: url('/recursos/fuentes/Cinzel-ExtraBold.ttf') format('truetype'); 
-}
-
-:root {
-    --color-background: #F7F7F7;
-    --color-base: #1E2022;
-    --color-accent: #00BFA6;
-    --font-heading: 'Cinzel-Extabold', serif;
-}
-
-body {
-    overflow: hidden;
-}
-
 #pantalla-carga {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 #pantalla-carga.oculto {
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 #logo {
-    width: 70%;
-    min-width: 150px;
-    max-width: 700px;
-    height: auto;
-    overflow: visible;
+  width: 70%;
+  min-width: 150px;
+  max-width: 700px;
+  height: auto;
+  overflow: visible;
 }
 
 .forma {
-    stroke: var(--color-accent);
-    fill: transparent; 
+  stroke: var(--color-accent);
+  fill: transparent;
 }
 
 .forma {
-    stroke-width: 10;
-    stroke-dasharray: 15000; 
-    stroke-dashoffset: 16000;
-    animation: 
-        draw 3.5s ease-out forwards,
-        fillIn 1s ease-out 2.3s forwards;
+  stroke-width: 10;
+  stroke-dasharray: 15000;
+  stroke-dashoffset: 16000;
+  animation: draw 3.5s ease-out forwards, fillIn 1s ease-out 2.3s forwards;
 }
 
 .texto-logo {
-    font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 2vw, 3rem) ;
-    stroke: var(--color-accent);
-    stroke-width: 1; 
-    fill: transparent;
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
-    animation: 
-        draw 3s ease-out 2s forwards,
-        fillIn 1s ease-out 2.3s forwards;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  stroke: var(--color-accent);
+  stroke-width: 1;
+  fill: transparent;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: draw 3s ease-out 2s forwards, fillIn 1s ease-out 2.3s forwards;
 }
 
 @keyframes draw {
-    to {
-        stroke-dashoffset: 0;
-    }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes fillIn {
-    from {
-        fill: transparent;
-    }
-    to {
-        fill: var(--color-accent);
-    }
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--color-accent);
+  }
+}
+
+/* ============================================= */
+/* El Códice del Estilo: Estilos.css v1.0         */
+/* La apariencia de El Dominio de Horus         */
+/* ============================================= */
+
+/* 1. Fuentes y Variables Raíz (El ADN Visual)
+   --------------------------------------------- 
+   Heredamos tu excelente configuración de variables. Aquí definimos 
+   la paleta de colores y las fuentes principales que usaremos en todo el sitio.
+*/
+@font-face {
+  font-family: "Cinzel-ExtraBold";
+  /* La ruta correcta desde la carpeta css, subiendo un nivel a assets */
+  src: url("recursos/fuentes/Cinzel-ExtraBold.ttf") format("truetype");
+}
+
+:root {
+  --color-background: #f7f7f7; /* Un fondo claro y limpio */
+  --color-text: #1e2022; /* Color de texto principal, oscuro y legible */
+  --color-accent: #00bfa6; /* Tu color de acento, el alma del diseño */
+  --font-heading: "Cinzel-ExtraBold", serif; /* Fuente para títulos */
+  --font-body: "Helvetica", "Arial", sans-serif; /* Fuente para el cuerpo del texto */
+}
+
+/* 2. Estilos Globales del Cuerpo (El Lienzo Base)
+   --------------------------------------------- 
+   Aplicamos los estilos fundamentales al cuerpo de la página.
+*/
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave al navegar por anclas */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 18px; /* Un tamaño de fuente base cómodo para la lectura */
+  line-height: 1.6;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased; /* Mejora el renderizado de fuentes en algunos navegadores */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Estructura y Contenedores Principales
+   --------------------------------------------- 
+   Definimos el layout de nuestros grandes bloques: header, main y footer.
+*/
+main {
+  /* Usamos flexbox para centrar fácilmente el contenido principal */
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px; /* Espaciado superior/inferior y en los lados */
+}
+
+/* El contenedor de nuestro artículo */
+.module-content {
+  width: 100%;
+  max-width: 720px; /* Un ancho de línea ideal para la lectura (entre 60-75 caracteres) */
+}
+
+/* 4. La Jerarquía Tipográfica (La Voz del Dominio)
+   --------------------------------------------- 
+   Estilos para todos los elementos de texto, creando una jerarquía visual clara.
+*/
+h1,
+h2 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.module-title {
+  /* h1 */
+  font-size: clamp(2rem, 5vw, 3rem); /* Tamaño de fuente adaptable */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-top: 40px; /* Espacio antes de cada nueva sección */
+  border-bottom: 2px solid var(--color-accent); /* Un sutil subrayado con nuestro color de acento */
+  padding-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px; /* Espacio entre párrafos */
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-text);
+}
+
+/* Estilos para citas, haciéndolas destacar */
+blockquote {
+  margin: 30px 0;
+  padding-left: 20px;
+  border-left: 4px solid var(--color-accent);
+  font-style: italic;
+  color: #555;
+}
+
+/* Estilos para código, tanto en línea como en bloque */
+code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #e9e9e9;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: #2d2d2d; /* Fondo oscuro para bloques de código */
+  color: #f8f8f2;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow-x: auto; /* Permite scroll horizontal si el código es muy largo */
+}
+
+pre code {
+  background-color: transparent; /* El code dentro de pre no necesita su propio fondo */
+  padding: 0;
+}
+
+/* 5. Metadatos del Módulo
+   --------------------------------------------- 
+   Estilos para la información sobre el artículo (autor, fecha, etc.)
+*/
+.module-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.module-meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.module-category {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px 15px;
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* 6. Animación de Carga (El Umbral de Entrada)
+   --------------------------------------------- 
+   Tu código original, perfectamente integrado.
+*/
+#pantalla-carga {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(
+    --color-background
+  ); /* Fondo para la pantalla de carga */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#pantalla-carga.oculto {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#logo {
+  width: 70%;
+  min-width: 150px;
+  max-width: 700px;
+  height: auto;
+  overflow: visible;
+}
+
+.forma,
+.texto-logo {
+  stroke: var(--color-accent);
+  fill: transparent;
+}
+
+.forma {
+  stroke-width: 10;
+  stroke-dasharray: 15000;
+  stroke-dashoffset: 16000;
+  animation: draw 3.5s ease-out forwards, fillIn 1s ease-out 2.3s forwards;
+}
+
+.texto-logo {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  stroke-width: 1;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: draw 3s ease-out 2s forwards, fillIn 1s ease-out 2.3s forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillIn {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--color-accent);
+  }
 }

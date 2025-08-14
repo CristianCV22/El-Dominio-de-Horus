@@ -1,0 +1,191 @@
+/* ============================================= */
+/* El Códice Cero: Reset CSS v1.0         */
+/* Un lienzo limpio para El Dominio de Horus  */
+/* ============================================= */
+
+/* 1. La regla de oro: Box Sizing
+   Esto cambia el modelo de caja para que el padding y el borde no aumenten el tamaño total del elemento.
+   Es la base de todo diseño moderno y predecible.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Eliminación de márgenes y paddings por defecto
+   Neutralizamos el espaciado que los navegadores aplican arbitrariamente.
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* 3. Asegurar que los elementos de bloque de HTML5 se rendericen correctamente
+   Esto es una salvaguarda para navegadores más antiguos.
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* 4. Configuraciones base del cuerpo (body)
+   Una línea de base para la altura y la tipografía.
+*/
+body {
+  line-height: 1.5; /* Un espaciado de línea legible */
+}
+
+/* 5. Reset para listas
+   Eliminamos los puntos y números por defecto. Los añadiremos manualmente cuando los necesitemos.
+*/
+ol,
+ul {
+  list-style: none;
+}
+
+/* 6. Reset para citas
+   Aseguramos que las comillas sean consistentes.
+*/
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* 7. Reset para tablas
+   Colapsamos los bordes para un control más limpio.
+*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 8. Reset para enlaces y botones
+   Heredan el color del texto y eliminamos el subrayado por defecto.
+*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 9. Reset para imágenes
+    Las hacemos elementos de bloque y aseguramos que no excedan su contenedor.
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 10. Reset para formularios
+    Permitimos que los elementos de formulario hereden la fuente.
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
