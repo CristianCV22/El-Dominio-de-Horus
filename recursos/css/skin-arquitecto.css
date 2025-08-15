@@ -1,0 +1,100 @@
+/* ============================================= */
+/* Skin: El Plano del Arquitecto (v1.0)          */
+/* Un estilo único para "La Convicción..."      */
+/* ============================================= */
+
+/* 1. El Lienzo: Un Fondo de Plano Arquitectónico
+   ------------------------------------------------ */
+.skin-arquitecto body {
+  /* Usamos un sutil patrón de cuadrícula que evoca un plano o papel milimetrado */
+  background-color: #f4f7f6;
+  background-image: linear-gradient(
+      rgba(0, 123, 137, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(0, 123, 137, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* 2. La Tableta de Contenido: El Papiro Desplegado
+   ------------------------------------------------ */
+.skin-arquitecto .module-content {
+  /* Hacemos que la sombra sea más pronunciada y del color de acento, como una maqueta */
+  box-shadow: 0 15px 35px rgba(0, 123, 137, 0.15);
+  border: none;
+}
+
+/* 3. La Tipografía: Anotaciones del Arquitecto
+   ------------------------------------------------ */
+.skin-arquitecto .module-section h2 {
+  /* Un estilo de título que parece una etiqueta de sección en un plano */
+  border-bottom: none;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.5rem;
+  font-size: 2.4rem;
+  color: #333;
+}
+
+.skin-arquitecto .module-section h2::before {
+  content: ""; /* Eliminamos el glifo para este estilo */
+}
+
+/* 4. La Magia: El Resaltado de Sabiduría (Versión "Tinta Roja")
+   ----------------------------------------------------------------- */
+.skin-arquitecto .highlighted-text {
+  /* Eliminamos el fondo anterior para un nuevo efecto */
+  background: none;
+  padding: 0;
+
+  /* El texto tendrá el color de acento, como una anotación importante */
+  color: var(--color-accent);
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Georgia", serif; /* Una fuente con más carácter para estas frases */
+
+  /* Creamos un "subrayado" animado que se dibuja solo */
+  background-image: linear-gradient(120deg, #ffd700 0%, #ffae00 100%);
+  background-repeat: no-repeat;
+  background-size: 0% 5px; /* Comienza con ancho cero y 5px de alto */
+  background-position: 0 100%;
+
+  /* Aplicamos la animación de dibujado del subrayado */
+  animation: drawUnderline 1.2s ease-out 0.8s forwards;
+}
+
+/* 5. El Ritmo de la Construcción: Animaciones Secuenciales
+   ----------------------------------------------------------------- */
+/* Hacemos que cada sección del artículo aparezca como si se estuviera construyendo */
+.skin-arquitecto .module-section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Aplicamos un retraso escalonado a cada sección para crear un efecto dominó */
+.skin-arquitecto .module-section:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+.skin-arquitecto .module-section:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.skin-arquitecto .module-section:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+.skin-arquitecto .module-section:nth-of-type(4) {
+  animation-delay: 0.8s;
+}
+.skin-arquitecto .module-section:nth-of-type(5) {
+  animation-delay: 1s;
+}
+.skin-arquitecto .module-section:nth-of-type(6) {
+  animation-delay: 1.2s;
+}
+
+/* 6. Definición de la Nueva Animación
+   ------------------------------------- */
+@keyframes drawUnderline {
+  to {
+    background-size: 100% 5px; /* El subrayado crece hasta ocupar el 100% del ancho */
+  }
+}
