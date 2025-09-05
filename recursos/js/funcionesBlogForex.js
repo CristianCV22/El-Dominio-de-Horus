@@ -103,3 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+// Selecciona el botón por su ID
+const continueButton = document.getElementById("continue-btn");
+
+// Añade un "escuchador" para el evento 'click'
+continueButton.addEventListener("click", function () {
+  // Redirige a la nueva página
+  window.location.href = "nombre-de-tu-otro-archivo.html";
+});
