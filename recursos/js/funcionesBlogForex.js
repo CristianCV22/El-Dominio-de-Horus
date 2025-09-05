@@ -111,5 +111,5 @@ const continueButton = document.getElementById("continue-btn");
 continueButton.addEventListener("click", function () {
   // Redirige a la nueva página
   window.location.href =
-    "../../El-Dominio-de-Horus//articulos/segundoBlogForex.html";
+    "../../El-Dominio-de-Horus/articulos/segundoBlogForex.html";
 });
