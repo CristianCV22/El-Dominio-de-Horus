@@ -1,0 +1,96 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #111827;
+  color: #f3f4f6;
+  scroll-behavior: smooth;
+}
+.interactive-card {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.interactive-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+.stat-number {
+  font-weight: 900;
+  color: #34d399;
+  text-shadow: 0 0 15px rgba(52, 211, 153, 0.5);
+}
+.clickable {
+  cursor: pointer;
+}
+.balance-beam {
+  width: 100%;
+  height: 10px;
+  background-color: #4b5563;
+  border-radius: 5px;
+  transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.balance-emoji {
+  transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    text-shadow 0.5s ease;
+}
+.tilted #balance-beam {
+  transform: rotate(-12deg);
+}
+.tilted #speculation-emoji {
+  transform: translateY(-40px);
+  text-shadow: 0 0 25px #34d399;
+}
+.tilted #trade-emoji {
+  transform: translateY(40px);
+}
+.percentage-text {
+  transition: color 0.5s ease;
+}
+.tilted #speculation-percent {
+  color: #34d399;
+}
+.game-card {
+  cursor: grab;
+  user-select: none;
+}
+.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+.drop-zone {
+  border: 2px dashed #4b5563;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.drop-zone.hovered {
+  background-color: #374151;
+  border-color: #34d399;
+}
+.reward-icon {
+  font-size: 5rem;
+  animation: bounce 1s infinite;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #34d399;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Interactivo: ¿Para Qué Existe Forex?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../recursos/css/" />
+  </head>
+  <body class="antialiased">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+      <header class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-2">
+          ¡Bienvenido de Nuevo, Explorador Financiero!
+        </h1>
+        <p class="text-lg text-gray-400">
+          En la última sesión, descubriste su
+          <span class="font-bold text-emerald-400">escala monumental</span>.
+          Hoy, revelaremos su
+          <span class="font-bold text-emerald-400">propósito</span>.
+        </p>
+      </header>
+
+      <main class="space-y-24">
+        <!-- Módulo 1: El Propósito Original (Comercio) -->
+        <section>
+          <h2 class="text-2xl font-bold text-center mb-2 text-emerald-400">
+            Misión 1: Facilitar el Comercio Global
+          </h2>
+          <p class="text-gray-300 text-center mb-8 max-w-2xl mx-auto">
+            Imagina que una empresa en México quiere comprar aguacates de
+            Colombia. ¿Cómo se paga? ¡Aquí entra Forex!
+          </p>
+          <div class="interactive-card rounded-xl p-8">
+            <div
+              class="flex flex-col md:flex-row items-center justify-around space-y-6 md:space-y-0"
+            >
+              <div id="mxn-card" class="text-center">
+                <div class="text-4xl">🇲🇽</div>
+                <p class="font-bold text-2xl">1,000,000</p>
+                <p class="text-gray-400">Pesos Mexicanos</p>
+              </div>
+
+              <div
+                id="forex-machine"
+                class="text-center p-6 border-2 border-dashed border-gray-600 rounded-lg"
+              >
+                <p class="font-bold text-emerald-500">MÁQUINA FOREX</p>
+                <p class="text-sm text-gray-500">Arrastra los Pesos aquí</p>
+              </div>
+
+              <div
+                id="cop-card"
+                class="text-center opacity-25 transition-opacity duration-500"
+              >
+                <div class="text-4xl">🇨🇴</div>
+                <p id="cop-amount" class="font-bold text-2xl">?</p>
+                <p class="text-gray-400">Pesos Colombianos</p>
+              </div>
+            </div>
+            <p
+              id="trade-result"
+              class="text-center mt-6 font-semibold text-emerald-400 opacity-0 transition-opacity duration-500"
+            >
+              ¡Transacción completada! Forex permitió el comercio internacional.
+            </p>
+          </div>
+        </section>
+
+        <!-- Módulo 2: El Gran Cambio (Especulación) -->
+        <section>
+          <h2 class="text-2xl font-bold text-center mb-2 text-emerald-400">
+            Misión 2: El Cambio de Juego
+          </h2>
+          <p class="text-gray-300 text-center mb-8 max-w-2xl mx-auto">
+            La alta liquidez y el acceso online atrajeron a un nuevo jugador: el
+            especulador. Esto cambió el equilibrio del mercado para siempre. Haz
+            clic para ver la realidad actual.
+          </p>
+          <div
+            id="balance-scale-container"
+            class="interactive-card rounded-xl p-8 flex flex-col items-center justify-center min-h-[420px] clickable overflow-hidden"
+          >
+            <!-- Contenedor de la balanza visual -->
+            <div class="relative w-full max-w-lg h-48">
+              <!-- Emojis -->
+              <div class="absolute inset-x-0 top-12 flex justify-between px-8">
+                <span id="trade-emoji" class="text-5xl balance-emoji">🚢</span>
+                <span id="speculation-emoji" class="text-5xl balance-emoji"
+                  >📈</span
+                >
+              </div>
+              <!-- Barra y Base -->
+              <div class="absolute inset-x-0 bottom-14">
+                <div class="relative w-full flex justify-center">
+                  <div id="balance-beam" class="balance-beam"></div>
+                  <div
+                    class="absolute -bottom-5 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[20px] border-t-gray-600"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contenedor del texto -->
+            <div class="flex justify-between w-full max-w-md text-center mt-4">
+              <div>
+                <p class="font-bold text-lg">Comercio</p>
+                <p
+                  id="trade-percent"
+                  class="font-bold text-2xl percentage-text"
+                >
+                  50%
+                </p>
+              </div>
+              <div>
+                <p class="font-bold text-lg">Especulación</p>
+                <p
+                  id="speculation-percent"
+                  class="font-bold text-2xl percentage-text"
+                >
+                  50%
+                </p>
+              </div>
+            </div>
+            <p
+              id="balance-instruction"
+              class="mt-8 text-gray-400 animate-pulse"
+            >
+              Haz clic para ver la realidad del mercado
+            </p>
+          </div>
+        </section>
+
+        <!-- Módulo 3: Juego de Refuerzo Final -->
+        <section id="reinforcement-game">
+          <h2 class="text-2xl font-bold text-center mb-2 text-emerald-400">
+            Misión Final: El Clasificador de Transacciones
+          </h2>
+          <p class="text-gray-300 text-center mb-8 max-w-2xl mx-auto">
+            Has aprendido las dos caras de Forex. Ahora, clasifica cada
+            transacción para desbloquear tu recompensa.
+          </p>
+          <div class="bg-gray-800 p-6 rounded-xl">
+            <div
+              id="current-card-container"
+              class="mb-6 min-h-[100px] flex items-center justify-center"
+            >
+              <!-- Las tarjetas del juego aparecerán aquí -->
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <button
+                id="btn-comercio"
+                class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold p-4 rounded-lg transition-transform transform hover:scale-105"
+              >
+                🚢 Facilitar Comercio
+              </button>
+              <button
+                id="btn-especulacion"
+                class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold p-4 rounded-lg transition-transform transform hover:scale-105"
+              >
+                📈 Especulación
+              </button>
+            </div>
+            <div
+              id="game-feedback"
+              class="mt-4 text-center font-semibold h-6"
+            ></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Modal de Recompensa -->
+    <div
+      id="reward-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-40 p-4"
+    >
+      <div
+        class="bg-gray-800 rounded-xl p-8 text-center max-w-md w-full border border-emerald-500 shadow-2xl"
+      >
+        <div class="reward-icon">🏆</div>
+        <h3 class="text-3xl font-bold text-emerald-400 mb-2">
+          ¡Misión Cumplida!
+        </h3>
+        <p class="text-gray-300 mb-6">
+          ¡Felicidades! Has dominado la diferencia fundamental entre comercio y
+          especulación en Forex.
+        </p>
+        <p class="text-sm text-gray-400 mb-6">
+          Estás un paso más cerca de entender cómo funciona realmente el motor
+          financiero del mundo.
+        </p>
+        <button
+          id="continue-btn"
+          class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+        >
+          ¡Siguiente Lección!
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal de Reintento -->
+    <div
+      id="retry-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-40 p-4"
+    >
+      <div
+        class="bg-gray-800 rounded-xl p-8 text-center max-w-md w-full border border-amber-500 shadow-2xl"
+      >
+        <h3 class="text-3xl font-bold text-amber-400 mb-2">¡Casi lo Logras!</h3>
+        <p id="retry-score" class="text-gray-300 mb-4">
+          Has acertado algunas, pero podemos mejorar.
+        </p>
+        <div
+          id="retry-hints"
+          class="text-left text-sm text-gray-400 bg-gray-900 p-4 rounded-lg mb-6 space-y-2"
+        >
+          <!-- Los consejos personalizados aparecerán aquí -->
+        </div>
+        <button
+          id="retry-game-btn"
+          class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+        >
+          Volver a Intentar
+        </button>
+      </div>
+    </div>
+
+    <script src="../recursos/js/segundoBlogForex.js"></script>
+  </body>
+</html>
