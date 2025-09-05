@@ -110,5 +110,6 @@ const continueButton = document.getElementById("continue-btn");
 // Añade un "escuchador" para el evento 'click'
 continueButton.addEventListener("click", function () {
   // Redirige a la nueva página
-  window.location.href = "../../articulos/segundoBlogForex.html";
+  window.location.href =
+    "../../El-Dominio-de-Horus//articulos/segundoBlogForex.html";
 });
